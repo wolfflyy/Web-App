@@ -23,8 +23,8 @@
             <tr><!--  tr Begin  -->
             
                 <th> Bank Account Details: </th>
-                <th> Easy Paisa, UBL Omni, Mobi Cash Details: </th>
-                <th> Western Union Details: </th>
+                <th> Paypal, Viettel Pay Details: </th>
+                <th> Momo Details: </th>
 
             </tr><!--  tr Finish  -->
             
@@ -32,9 +32,9 @@
         
         <tbody><!--  tbody Begin  -->
            
-           <td> Bank Name: UBL | Account No: 180-839-032 | Branch Name: Lahore | Branch Code: 1498 </td>
-           <td> NIC #980-231-907 | Mobile No: 0931-7894-9983 | Name: MrGhie </td>
-           <td> Real Name: Mr Mughianto | Mobile No: 0931-7894-9983 Country: Pakistan | Name: MrGhie | NIC #980-231-907 </td>
+           <td> Bank Name: UBL | Account No: 180-839-032 | Branch Name: Gogogo | Branch Code: 1498 </td>
+           <td> NIC #980-231-907 | Mobile No: 0931-7894-9983 | Name: MrKinn </td>
+           <td> Real Name: Mr Van Hung | Mobile No: 0931-7894-9983 Country: Vietnam | Name: MrKinn | NIC #980-231-907 </td>
             
         </tbody><!--  tbody Finish  -->
         

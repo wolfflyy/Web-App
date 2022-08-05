@@ -23,7 +23,7 @@ if(isset($_GET['order_id'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>M-Dev Store</title>
+    <title>ATN Store</title>
     <link rel="stylesheet" href="styles/bootstrap-337.min.css">
     <link rel="stylesheet" href="font-awsome/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/style.css">
@@ -106,8 +106,8 @@ if(isset($_GET['order_id'])){
                
                <a href="../index.php" class="navbar-brand home"><!-- navbar-brand home Begin -->
                    
-                   <img src="images/ecom-store-logo.png" alt="M-dev-Store Logo" class="hidden-xs">
-                   <img src="images/ecom-store-logo-mobile.png" alt="M-dev-Store Logo Mobile" class="visible-xs">
+                   <img src="images/ATN (3).png" alt="ATN-Store Logo" class="hidden-xs">
+                   <img src="images/ATN (3).png" alt="ATN-Store Logo Mobile" class="visible-xs">
                    
                </a><!-- navbar-brand home Finish -->
                
@@ -261,10 +261,10 @@ if(isset($_GET['order_id'])){
                           <select name="payment_mode" class="form-control"><!-- form-control Begin -->
                               
                               <option> Select Payment Mode </option>
-                              <option> Back Code </option>
-                              <option> Paypall </option>
-                              <option> Payoneer </option>
-                              <option> Western Union </option>
+                              <option> Viettel Pay </option>
+                              <option> Paypal </option>
+                              <option> Momo </option>
+                              <option> Bank </option>
                               
                           </select><!-- form-control Finish -->
                            
@@ -280,7 +280,7 @@ if(isset($_GET['order_id'])){
                        
                        <div class="form-group"><!-- form-group Begin -->
                            
-                         <label> Paypall / Payoneer / Western Union Code: </label>
+                         <label> Viettel Pay / Bank / Paypal / Momo Code: </label>
                           
                           <input type="text" class="form-control" name="code" required>
                            
@@ -328,15 +328,15 @@ if(isset($_GET['order_id'])){
                         
                         $insert_payment = "insert into payments (invoice_no,amount,payment_mode,ref_no,code,payment_date) values ('$invoice_no','$amount','$payment_mode','$ref_no','$code','$payment_date')";
                         
-                        $run_payment = mysqli_query($con,$insert_payment);
+                        $run_payment = pg_query($con,$insert_payment);
                         
                         $update_customer_order = "update customer_orders set order_status='$complete' where order_id='$update_id'";
                         
-                        $run_customer_order = mysqli_query($con,$update_customer_order);
+                        $run_customer_order = pg_query($con,$update_customer_order);
                         
                         $update_pending_order = "update pending_orders set order_status='$complete' where order_id='$update_id'";
                         
-                        $run_pending_order = mysqli_query($con,$update_pending_order);
+                        $run_pending_order = pg_query($con,$update_pending_order);
                         
                         if($run_pending_order){
                             

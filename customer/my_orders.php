@@ -45,19 +45,19 @@
             
             $get_customer = "select * from customers where customer_email='$customer_session'";
             
-            $run_customer = mysqli_query($con,$get_customer);
+            $run_customer = pg_query($con,$get_customer);
             
-            $row_customer = mysqli_fetch_array($run_customer);
+            $row_customer = pg_fetch_array($run_customer);
             
             $customer_id = $row_customer['customer_id'];
             
             $get_orders = "select * from customer_orders where customer_id='$customer_id'";
             
-            $run_orders = mysqli_query($con,$get_orders);
+            $run_orders = pg_query($con,$get_orders);
             
             $i = 0;
             
-            while($row_orders = mysqli_fetch_array($run_orders)){
+            while($row_orders = pg_fetch_array($run_orders)){
                 
                 $order_id = $row_orders['order_id'];
                 
