@@ -56,9 +56,9 @@
                             
                                 $get_payments = "select * from payments";
                                 
-                                $run_payments = mysqli_query($con,$get_payments);
+                                $run_payments = pg_query($con,$get_payments);
           
-                                while($row_payments=mysqli_fetch_array($run_payments)){
+                                while($row_payments=pg_fetch_array($run_payments)){
                                     
                                     $payment_id = $row_payments['payment_id'];
                                     

@@ -9,7 +9,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>M-Dev Store Admin Area</title>
+    <title>ATN Store Admin Area</title>
     <link rel="stylesheet" href="css/bootstrap-337.min.css">
     <link rel="stylesheet" href="font-awsome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -42,15 +42,15 @@
 
     if(isset($_POST['admin_login'])){
         
-        $admin_email = mysqli_real_escape_string($con,$_POST['admin_email']);
+        $admin_email = pg_escape_string($con,$_POST['admin_email']);
         
-        $admin_pass = mysqli_real_escape_string($con,$_POST['admin_pass']);
+        $admin_pass = pg_escape_string($con,$_POST['admin_pass']);
         
         $get_admin = "select * from admins where admin_email='$admin_email' AND admin_pass='$admin_pass'";
         
-        $run_admin = mysqli_query($con,$get_admin);
+        $run_admin = pg_query($con,$get_admin);
         
-        $count = mysqli_num_rows($run_admin);
+        $count = pg_num_rows($run_admin);
         
         if($count==1){
             

@@ -57,9 +57,9 @@
                             
                                 $get_c = "select * from customers";
                                 
-                                $run_c = mysqli_query($con,$get_c);
+                                $run_c = pg_query($con,$get_c);
           
-                                while($row_c=mysqli_fetch_array($run_c)){
+                                while($row_c=pg_fetch_array($run_c)){
                                     
                                     $c_id = $row_c['customer_id'];
                                     

@@ -53,9 +53,9 @@
                             
                                 $get_manufacturer = "select * from manufacturers";
                                 
-                                $run_manufacturer = mysqli_query($con,$get_manufacturer);
+                                $run_manufacturer = pg_query($con,$get_manufacturer);
           
-                                while($row_manufacturer=mysqli_fetch_array($run_manufacturer)){
+                                while($row_manufacturer=pg_fetch_array($run_manufacturer)){
                                     
                                     $manufacturer_id = $row_manufacturer['manufacturer_id'];
                                     

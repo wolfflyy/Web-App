@@ -16,9 +16,9 @@
         
         $edit_p_cat_query = "select * from product_categories where p_cat_id='$edit_p_cat_id'";
         
-        $run_edit = mysqli_query($con,$edit_p_cat_query);
+        $run_edit = pg_query($con,$edit_p_cat_query);
         
-        $row_edit = mysqli_fetch_array($run_edit);
+        $row_edit = pg_fetch_array($run_edit);
         
         $p_cat_id = $row_edit['p_cat_id'];
         
@@ -165,7 +165,7 @@
                 
                 $update_p_cat = "update product_categories set p_cat_title='$p_cat_title',p_cat_top='$p_cat_top',p_cat_image='$p_cat_image' where p_cat_id='$p_cat_id'";
                 
-                $run_p_cat = mysqli_query($con,$update_p_cat);
+                $run_p_cat = pg_query($con,$update_p_cat);
                 
                 if($run_p_cat){
                     
@@ -179,7 +179,7 @@
                 
                 $update_p_cat = "update product_categories set p_cat_title='$p_cat_title',p_cat_top='$p_cat_top' where p_cat_id='$p_cat_id'";
                 
-                $run_p_cat = mysqli_query($con,$update_p_cat);
+                $run_p_cat = pg_query($con,$update_p_cat);
                 
                 if($run_p_cat){
                     

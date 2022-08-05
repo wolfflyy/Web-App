@@ -80,9 +80,9 @@
                               <?php 
                               
                               $get_manufacturer = "select * from manufacturers";
-                              $run_manufacturer = mysqli_query($con,$get_manufacturer);
+                              $run_manufacturer = pg_query($con,$get_manufacturer);
                               
-                              while ($row_manufacturer=mysqli_fetch_array($run_manufacturer)){
+                              while ($row_manufacturer=pg_fetch_array($run_manufacturer)){
                                   
                                   $manufacturer_id = $row_manufacturer['manufacturer_id'];
                                   $manufacturer_title = $row_manufacturer['manufacturer_title'];
@@ -116,9 +116,9 @@
                               <?php 
                               
                               $get_p_cats = "select * from product_categories";
-                              $run_p_cats = mysqli_query($con,$get_p_cats);
+                              $run_p_cats = pg_query($con,$get_p_cats);
                               
-                              while ($row_p_cats=mysqli_fetch_array($run_p_cats)){
+                              while ($row_p_cats=pg_fetch_array($run_p_cats)){
                                   
                                   $p_cat_id = $row_p_cats['p_cat_id'];
                                   $p_cat_title = $row_p_cats['p_cat_title'];
@@ -152,9 +152,9 @@
                               <?php 
                               
                               $get_cat = "select * from categories";
-                              $run_cat = mysqli_query($con,$get_cat);
+                              $run_cat = pg_query($con,$get_cat);
                               
-                              while ($row_cat=mysqli_fetch_array($run_cat)){
+                              while ($row_cat=pg_fetch_array($run_cat)){
                                   
                                   $cat_id = $row_cat['cat_id'];
                                   $cat_title = $row_cat['cat_title'];
@@ -301,7 +301,7 @@ if(isset($_POST['submit'])){
     
     $insert_product = "insert into products (p_cat_id,cat_id,manufacturer_id,date,product_title,product_img1,product_img2,product_img3,product_price,product_keywords,product_desc) values ('$product_cat','$cat','$manufacturer_id',NOW(),'$product_title','$product_img1','$product_img2','$product_img3','$product_price','$product_keywords','$product_desc')";
     
-    $run_product = mysqli_query($con,$insert_product);
+    $run_product = pg_query($con,$insert_product);
     
     if($run_product){
         

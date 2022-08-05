@@ -14,8 +14,8 @@
 
             $edit_manufacturer = $_GET['edit_manufacturer'];
             $get_manufacturer = "select * from manufacturers where manufacturer_id='$edit_manufacturer'";
-            $run_manufacturer = mysqli_query($con,$get_manufacturer);
-            $row_manufacturer = mysqli_fetch_array($run_manufacturer);
+            $run_manufacturer = pg_query($con,$get_manufacturer);
+            $row_manufacturer = pg_fetch_array($run_manufacturer);
 
             $m_id = $row_manufacturer['manufacturer_id'];
             $m_title = $row_manufacturer['manufacturer_title'];
@@ -156,7 +156,7 @@
             
             $update_manufacturer = "update manufacturers set manufacturer_title='$manufacturer_name',manufacturer_top='$manufacturer_top',manufacturer_image='$manufacturer_image'where manufacturer_id='$m_id'" ;
             
-            $run_manufacturer = mysqli_query($con,$update_manufacturer);
+            $run_manufacturer = pg_query($con,$update_manufacturer);
 
             if($run_manufacturer){
             
@@ -170,7 +170,7 @@
             
             $update_manufacturer = "update manufacturers set manufacturer_title='$manufacturer_name',manufacturer_top='$manufacturer_top' where manufacturer_id='$m_id'" ;
             
-            $run_manufacturer = mysqli_query($con,$update_manufacturer);
+            $run_manufacturer = pg_query($con,$update_manufacturer);
 
             if($run_manufacturer){
             

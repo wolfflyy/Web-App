@@ -16,9 +16,9 @@
         
         $get_p = "select * from products where product_id='$edit_id'";
         
-        $run_edit = mysqli_query($con,$get_p);
+        $run_edit = pg_query($con,$get_p);
         
-        $row_edit = mysqli_fetch_array($run_edit);
+        $row_edit = pg_fetch_array($run_edit);
         
         $p_id = $row_edit['product_id'];
         
@@ -46,9 +46,9 @@
         
         $get_manufacturer = "select * from manufacturers where manufacturer_id='$m_id'";
         
-        $run_manufacturer = mysqli_query($con,$get_manufacturer);
+        $run_manufacturer = pg_query($con,$get_manufacturer);
         
-        $row_manufacturer = mysqli_fetch_array($run_manufacturer);
+        $row_manufacturer = pg_fetch_array($run_manufacturer);
         
         $manufacturer_id = $row_manufacturer['manufacturer_id'];
         
@@ -56,17 +56,17 @@
         
         $get_p_cat = "select * from product_categories where p_cat_id='$p_cat'";
         
-        $run_p_cat = mysqli_query($con,$get_p_cat);
+        $run_p_cat = pg_query($con,$get_p_cat);
         
-        $row_p_cat = mysqli_fetch_array($run_p_cat);
+        $row_p_cat = pg_fetch_array($run_p_cat);
         
         $p_cat_title = $row_p_cat['p_cat_title'];
         
         $get_cat = "select * from categories where cat_id='$cat'";
         
-        $run_cat = mysqli_query($con,$get_cat);
+        $run_cat = pg_query($con,$get_cat);
         
-        $row_cat = mysqli_fetch_array($run_cat);
+        $row_cat = pg_fetch_array($run_cat);
         
         $cat_title = $row_cat['cat_title'];
 
@@ -146,9 +146,9 @@
                               <?php 
                               
                               $get_manufacturer = "select * from manufacturers";
-                              $run_manufacturer = mysqli_query($con,$get_manufacturer);
+                              $run_manufacturer = pg_query($con,$get_manufacturer);
                               
-                              while ($row_manufacturer=mysqli_fetch_array($run_manufacturer)){
+                              while ($row_manufacturer=pg_fetch_array($run_manufacturer)){
                                   
                                   $manufacturer_id = $row_manufacturer['manufacturer_id'];
                                   $manufacturer_title = $row_manufacturer['manufacturer_title'];
@@ -184,9 +184,9 @@
                               <?php 
                               
                               $get_p_cats = "select * from product_categories";
-                              $run_p_cats = mysqli_query($con,$get_p_cats);
+                              $run_p_cats = pg_query($con,$get_p_cats);
                               
-                              while ($row_p_cats=mysqli_fetch_array($run_p_cats)){
+                              while ($row_p_cats=pg_fetch_array($run_p_cats)){
                                   
                                   $p_cat_id = $row_p_cats['p_cat_id'];
                                   $p_cat_title = $row_p_cats['p_cat_title'];
@@ -222,9 +222,9 @@
                               <?php 
                               
                               $get_cat = "select * from categories";
-                              $run_cat = mysqli_query($con,$get_cat);
+                              $run_cat = pg_query($con,$get_cat);
                               
-                              while ($row_cat=mysqli_fetch_array($run_cat)){
+                              while ($row_cat=pg_fetch_array($run_cat)){
                                   
                                   $cat_id = $row_cat['cat_id'];
                                   $cat_title = $row_cat['cat_title'];
@@ -391,7 +391,7 @@ if(isset($_POST['update'])){
         
         $update_product = "update products set p_cat_id='$product_cat',cat_id='$cat',manufacturer_id='$manufacturer_id',date=NOW(),product_title='$product_title',product_img1='$product_img1',product_img2='$product_img2',product_img3='$product_img3',product_keywords='$product_keywords',product_desc='$product_desc',product_price='$product_price' where product_id='$p_id'";
         
-        $run_product = mysqli_query($con,$update_product);
+        $run_product = pg_query($con,$update_product);
         
         if($run_product){
             
@@ -407,7 +407,7 @@ if(isset($_POST['update'])){
         
         $update_product = "update products set p_cat_id='$product_cat',cat_id='$cat',manufacturer_id='$manufacturer_id',date=NOW(),product_title='$product_title',product_keywords='$product_keywords',product_desc='$product_desc',product_price='$product_price' where product_id='$p_id'";
         
-        $run_product = mysqli_query($con,$update_product);
+        $run_product = pg_query($con,$update_product);
         
         if($run_product){
             

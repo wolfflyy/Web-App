@@ -37,9 +37,9 @@
                 
                     $get_terms = "select * from terms";
         
-                    $run_terms = mysqli_query($con,$get_terms);
+                    $run_terms = pg_query($con,$get_terms);
         
-                    while($run_terms_section=mysqli_fetch_array($run_terms)){
+                    while($run_terms_section=pg_fetch_array($run_terms)){
                         
                         $term_id = $run_terms_section['term_id'];
                         

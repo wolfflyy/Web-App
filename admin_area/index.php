@@ -13,9 +13,9 @@
         
         $get_admin = "select * from admins where admin_email='$admin_session'";
         
-        $run_admin = mysqli_query($con,$get_admin);
+        $run_admin = pg_query($con,$get_admin);
         
-        $row_admin = mysqli_fetch_array($run_admin);
+        $row_admin = pg_fetch_array($run_admin);
         
         $admin_id = $row_admin['admin_id'];
         
@@ -35,27 +35,27 @@
         
         $get_products = "select * from products";
         
-        $run_products = mysqli_query($con,$get_products);
+        $run_products = pg_query($con,$get_products);
         
-        $count_products = mysqli_num_rows($run_products);
+        $count_products = pg_num_rows($run_products);
         
         $get_customers = "select * from customers";
         
-        $run_customers = mysqli_query($con,$get_customers);
+        $run_customers = pg_query($con,$get_customers);
         
-        $count_customers = mysqli_num_rows($run_customers);
+        $count_customers = pg_num_rows($run_customers);
         
         $get_p_categories = "select * from product_categories";
         
-        $run_p_categories = mysqli_query($con,$get_p_categories);
+        $run_p_categories = pg_query($con,$get_p_categories);
         
-        $count_p_categories = mysqli_num_rows($run_p_categories);
+        $count_p_categories = pg_num_rows($run_p_categories);
         
         $get_pending_orders = "select * from pending_orders";
         
-        $run_pending_orders = mysqli_query($con,$get_pending_orders);
+        $run_pending_orders = pg_query($con,$get_pending_orders);
         
-        $count_pending_orders = mysqli_num_rows($run_pending_orders);
+        $count_pending_orders = pg_num_rows($run_pending_orders);
 
 ?>
 
@@ -64,7 +64,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>M-Dev Store Admin Area</title>
+    <title>ATN Store Admin Area</title>
     <link rel="stylesheet" href="css/bootstrap-337.min.css">
     <link rel="stylesheet" href="font-awsome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">

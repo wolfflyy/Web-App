@@ -37,9 +37,9 @@
                 
                     $get_slides = "select * from slider";
         
-                    $run_slides = mysqli_query($con,$get_slides);
+                    $run_slides = pg_query($con,$get_slides);
         
-                    while($row_slides=mysqli_fetch_array($run_slides)){
+                    while($row_slides=pg_fetch_array($run_slides)){
                         
                         $slide_id = $row_slides['slide_id'];
                         
