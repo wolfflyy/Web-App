@@ -261,10 +261,10 @@ if(isset($_GET['order_id'])){
                           <select name="payment_mode" class="form-control"><!-- form-control Begin -->
                               
                               <option> Select Payment Mode </option>
-                              <option> Viettel Pay </option>
-                              <option> Paypal </option>
-                              <option> Momo </option>
-                              <option> Bank </option>
+                              <option> Back Code </option>
+                              <option> Paypall </option>
+                              <option> Payoneer </option>
+                              <option> Western Union </option>
                               
                           </select><!-- form-control Finish -->
                            
@@ -280,7 +280,7 @@ if(isset($_GET['order_id'])){
                        
                        <div class="form-group"><!-- form-group Begin -->
                            
-                         <label> Viettel Pay / Bank / Paypal / Momo Code: </label>
+                         <label> Paypall / Payoneer / Western Union Code: </label>
                           
                           <input type="text" class="form-control" name="code" required>
                            
