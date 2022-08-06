@@ -1,6 +1,5 @@
 <?php 
 
-// $db = mysqli_connect("localhost","root","","ecom_store");
 $db = pg_connect("host=ec2-3-223-169-166.compute-1.amazonaws.com dbname=d94h92r35f62ln user=uxeervncpjcmmz password=d39e779b329374643f49f481395c02c2c32b64ef138a4c83e90f2f9fb922bc9b port=5432");
 
 /// begin getRealIpUser functions ///
@@ -68,7 +67,7 @@ function getPro(){
     
     global $db;
     
-    $get_products = "select * from products order by 1 DESC LIMIT 0,8";
+    $get_products = "select * from products order by 1 DESC";
     
     $run_products = pg_query($db,$get_products);
     
@@ -338,7 +337,7 @@ function getProducts(){
     }
 
     $start_from = ($page-1) * $per_page;
-    $sLimit = " order by 1 DESC LIMIT $start_from,$per_page";
+    $sLimit = " order by 1 DESC";
     $sWhere = (count($aWhere)>0?' WHERE '.implode(' or ',$aWhere):'').$sLimit;
     $get_products = "select * from products ".$sWhere;
     $run_products = pg_query($db,$get_products);

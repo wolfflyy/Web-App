@@ -24,7 +24,7 @@
                   
                   <?php 
                    
-                   $get_slides = "select * from slider LIMIT 0,1";
+                   $get_slides = "select * from slider";
                    
                    $run_slides = pg_query($con,$get_slides);
                    
@@ -50,7 +50,7 @@
                        
                    }
                    
-                   $get_slides = "select * from slider LIMIT 1,3";
+                   $get_slides = "select * from slider";
                    
                    $run_slides = pg_query($con,$get_slides);
                    

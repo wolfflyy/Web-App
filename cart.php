@@ -231,7 +231,7 @@
                    
                    <?php 
                    
-                   $get_products = "select * from products order by rand() LIMIT 0,3";
+                   $get_products = "select * from products order by random()";
                    
                    $run_products = pg_query($con,$get_products);
                    
