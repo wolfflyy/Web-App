@@ -67,7 +67,7 @@ function getPro(){
     
     global $db;
     
-    $get_products = "select * from products order by 1 DESC LIMIT 0,8";
+    $get_products = "select * from products order by 1 DESC";
     
     $run_products = pg_query($db,$get_products);
     
@@ -351,7 +351,7 @@ function getcatpro(){
         
         $cat_desc = $row_cat['cat_desc'];
         
-        $get_cat = "select * from products where cat_id='$cat_id' LIMIT 0,6";
+        $get_cat = "select * from products where cat_id='$cat_id'";
         
         $run_products = pg_query($db,$get_cat);
         
