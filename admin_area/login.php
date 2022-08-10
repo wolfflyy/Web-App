@@ -42,9 +42,9 @@
 
     if(isset($_POST['admin_login'])){
         
-        $admin_email = pg_real_escape_string($db,$_POST['admin_email']);
+        $admin_email = pg_escape_litera($db,$_POST['admin_email']);
         
-        $admin_pass = pg_real_escape_string($db,$_POST['admin_pass']);
+        $admin_pass = pg_escape_litera($db,$_POST['admin_pass']);
         
         $get_admin = "select * from admins where admin_email='$admin_email' AND admin_pass='$admin_pass'";
         
