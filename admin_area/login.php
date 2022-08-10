@@ -42,13 +42,13 @@
 
     if(isset($_POST['admin_login'])){
         
-        $admin_email = pg_escape_litera($db,$_POST['admin_email']);
+        $admin_email = pg_escape_string($con,$_POST['admin_email']);
         
-        $admin_pass = pg_escape_litera($db,$_POST['admin_pass']);
+        $admin_pass = pg_escape_string($con,$_POST['admin_pass']);
         
         $get_admin = "select * from admins where admin_email='$admin_email' AND admin_pass='$admin_pass'";
         
-        $run_admin = pg_query($db,$get_admin);
+        $run_admin = pg_query($con,$get_admin);
         
         $count = pg_num_rows($run_admin);
         

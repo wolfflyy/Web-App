@@ -57,7 +57,7 @@
                             
                                 $get_users = "select * from admins";
                                 
-                                $run_users = pg_query($db,$get_users);
+                                $run_users = pg_query($con,$get_users);
           
                                 while($row_users=pg_fetch_array($run_users)){
                                     
