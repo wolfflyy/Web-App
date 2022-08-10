@@ -50,7 +50,7 @@
                     
                         $get_p_cats = "select * from product_categories";
                     
-                        $run_p_cats = pg_query($db,$get_p_cats);
+                        $run_p_cats = pg_query($conn,$get_p_cats);
                     
                         while($row_p_cats=pg_fetch_array($run_p_cats)){
                             

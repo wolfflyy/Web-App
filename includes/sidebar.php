@@ -102,7 +102,7 @@ if(isset($_REQUEST['p_cat'])&&is_array($_REQUEST['p_cat'])){
                 <?php 
                 
                 $get_manufacturer = "select * from manufacturers where manufacturer_top='yes'";
-                $run_manufacturer = pg_query($db,$get_manufacturer);
+                $run_manufacturer = pg_query($conn,$get_manufacturer);
 
                 while($row_manufacturer=pg_fetch_array($run_manufacturer)){
 
@@ -148,7 +148,7 @@ if(isset($_REQUEST['p_cat'])&&is_array($_REQUEST['p_cat'])){
                 }
                 
                 $get_manufacturer = "select * from manufacturers where manufacturer_top='no'";
-                $run_manufacturer = pg_query($db,$get_manufacturer);
+                $run_manufacturer = pg_query($conn,$get_manufacturer);
 
                 while($row_manufacturer=pg_fetch_array($run_manufacturer)){
 
@@ -244,7 +244,7 @@ if(isset($_REQUEST['p_cat'])&&is_array($_REQUEST['p_cat'])){
                 <?php 
                 
                 $get_cat = "select * from categories where cat_top='yes'";
-                $run_cat = pg_query($db,$get_cat);
+                $run_cat = pg_query($conn,$get_cat);
 
                 while($row_cat=pg_fetch_array($run_cat)){
 
@@ -290,7 +290,7 @@ if(isset($_REQUEST['p_cat'])&&is_array($_REQUEST['p_cat'])){
                 }
                 
                 $get_cat = "select * from categories where cat_top='no'";
-                $run_cat = pg_query($db,$get_cat);
+                $run_cat = pg_query($conn,$get_cat);
 
                 while($row_cat=pg_fetch_array($run_cat)){
 
@@ -386,7 +386,7 @@ if(isset($_REQUEST['p_cat'])&&is_array($_REQUEST['p_cat'])){
                 <?php 
                 
                 $get_p_cat = "select * from product_categories where p_cat_top='yes'";
-                $run_p_cat = pg_query($db,$get_p_cat);
+                $run_p_cat = pg_query($conn,$get_p_cat);
 
                 while($row_p_cat=pg_fetch_array($run_p_cat)){
 
@@ -432,7 +432,7 @@ if(isset($_REQUEST['p_cat'])&&is_array($_REQUEST['p_cat'])){
                 }
                 
                 $get_p_cat = "select * from product_categories where p_cat_top='no'";
-                $run_p_cat = pg_query($db,$get_p_cat);
+                $run_p_cat = pg_query($conn,$get_p_cat);
 
                 while($row_p_cat=pg_fetch_array($run_p_cat)){
 
