@@ -16,7 +16,7 @@
         
         $delete_pro = "delete from products where product_id='$delete_id'";
         
-        $run_delete = pg_query($con,$delete_pro);
+        $run_delete = pg_query($db,$delete_pro);
         
         if($run_delete){
             

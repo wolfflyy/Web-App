@@ -16,7 +16,7 @@
         
         $edit_cat_query = "select * from categories where cat_id='$edit_cat_id'";
         
-        $run_edit = pg_query($con,$edit_cat_query);
+        $run_edit = pg_query($db,$edit_cat_query);
         
         $row_edit = pg_fetch_array($run_edit);
         
@@ -165,7 +165,7 @@
                 
                 $update_cat = "update categories set cat_title='$cat_title',cat_top='$cat_top',cat_image='$cat_image' where cat_id='$cat_id'";
                 
-                $run_cat = pg_query($con,$update_cat);
+                $run_cat = pg_query($db,$update_cat);
                 
                 if($run_cat){
                     
@@ -179,7 +179,7 @@
                 
                 $update_cat = "update categories set cat_title='$cat_title',cat_top='$cat_top' where cat_id='$cat_id'";
                 
-                $run_cat = pg_query($con,$update_cat);
+                $run_cat = pg_query($db,$update_cat);
                 
                 if($run_cat){
                     

@@ -16,7 +16,7 @@
         
         $delete_c = "delete from customers where customer_id='$delete_id'";
         
-        $run_delete = pg_query($con,$delete_c);
+        $run_delete = pg_query($db,$delete_c);
         
         if($run_delete){
             

@@ -226,7 +226,7 @@
           
                                 $get_order = "select * from pending_orders order by 1 DESC LIMIT 0,5";
           
-                                $run_order = pg_query($con,$get_order);
+                                $run_order = pg_query($db,$get_order);
           
                                 while($row_order=pg_fetch_array($run_order)){
                                     
@@ -257,7 +257,7 @@
                                     
                                         $get_customer = "select * from customers where customer_id='$c_id'";
                                     
-                                        $run_customer = pg_query($con,$get_customer);
+                                        $run_customer = pg_query($db,$get_customer);
                                     
                                         $row_customer = pg_fetch_array($run_customer);
                                     

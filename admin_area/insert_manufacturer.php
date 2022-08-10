@@ -116,7 +116,7 @@
         
         $insert_manufacturer = "insert into manufacturers (manufacturer_title,manufacturer_top,manufacturer_image) values ('$manufacturer_name','$manufacturer_top','$manufacturer_image')";
         
-        $run_manufacturer = pg_query($con,$insert_manufacturer);
+        $run_manufacturer = pg_query($db,$insert_manufacturer);
         
         echo "<script>alert('Your new manufacturer has been inserted')</script>";
         

@@ -13,7 +13,7 @@
         
         $get_admin = "select * from admins where admin_email='$admin_session'";
         
-        $run_admin = pg_query($con,$get_admin);
+        $run_admin = pg_query($db,$get_admin);
         
         $row_admin = pg_fetch_array($run_admin);
         
@@ -35,25 +35,25 @@
         
         $get_products = "select * from products";
         
-        $run_products = pg_query($con,$get_products);
+        $run_products = pg_query($db,$get_products);
         
         $count_products = pg_num_rows($run_products);
         
         $get_customers = "select * from customers";
         
-        $run_customers = pg_query($con,$get_customers);
+        $run_customers = pg_query($db,$get_customers);
         
         $count_customers = pg_num_rows($run_customers);
         
         $get_p_categories = "select * from product_categories";
         
-        $run_p_categories = pg_query($con,$get_p_categories);
+        $run_p_categories = pg_query($db,$get_p_categories);
         
         $count_p_categories = pg_num_rows($run_p_categories);
         
         $get_pending_orders = "select * from pending_orders";
         
-        $run_pending_orders = pg_query($con,$get_pending_orders);
+        $run_pending_orders = pg_query($db,$get_pending_orders);
         
         $count_pending_orders = pg_num_rows($run_pending_orders);
 

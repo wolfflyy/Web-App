@@ -16,7 +16,7 @@
         
         $delete_manufacturer = "delete from manufacturers where manufacturer_id='$delete_id'";
         
-        $run_delete = pg_query($con,$delete_manufacturer);
+        $run_delete = pg_query($db,$delete_manufacturer);
         
         if($run_delete){
             

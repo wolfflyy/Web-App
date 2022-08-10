@@ -53,7 +53,7 @@
                             
                                 $get_manufacturer = "select * from manufacturers";
                                 
-                                $run_manufacturer = pg_query($con,$get_manufacturer);
+                                $run_manufacturer = pg_query($db,$get_manufacturer);
           
                                 while($row_manufacturer=pg_fetch_array($run_manufacturer)){
                                     
