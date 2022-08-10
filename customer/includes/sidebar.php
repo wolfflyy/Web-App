@@ -8,9 +8,9 @@
         
         $get_customer = "select * from customers where customer_email='$customer_session'";
         
-        $run_customer = mysqli_query($con,$get_customer);
+        $run_customer = pg_query($db,$get_customer);
         
-        $row_customer = mysqli_fetch_array($run_customer);
+        $row_customer = pg_fetch_array($run_customer);
         
         $customer_image = $row_customer['customer_image'];
         
