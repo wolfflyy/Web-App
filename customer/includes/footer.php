@@ -66,9 +66,9 @@
                     
                         $get_p_cats = "select * from product_categories";
                     
-                        $run_p_cats = mysqli_query($con,$get_p_cats);
+                        $run_p_cats = pg_query($db,$get_p_cats);
                     
-                        while($row_p_cats=mysqli_fetch_array($run_p_cats)){
+                        while($row_p_cats=pg_fetch_array($run_p_cats)){
                             
                             $p_cat_id = $row_p_cats['p_cat_id'];
                             
@@ -104,12 +104,12 @@
                 
                 <p><!-- p Start -->
                     
-                    <strong>M-Dev Media inc.</strong>
-                    <br/>Cibubur
-                    <br/>Ciracas
+                    <strong>ATN inc.</strong>
+                    <br/>Anh Duc
+                    <br/>Khoi Ngo
                     <br/>0818-0683-3157
-                    <br/>mugianto4th@gmail.com
-                    <br/><strong>MrGhie</strong>
+                    <br/>anhduc123@gmail.com
+                    <br/><strong>MrKinn</strong>
                     
                 </p><!-- p Finish -->
                 
@@ -124,7 +124,7 @@
                 <h4>Get The News</h4>
                 
                 <p class="text-muted">
-                    Dont miss our latest update products.
+                    Get your latest news here.
                 </p>
                 
                 <form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=M-devMedia', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true" method="post"><!-- form begin -->
@@ -165,12 +165,12 @@
     <div class="container"><!-- container Begin -->
         <div class="col-md-6"><!-- col-md-6 Begin -->
             
-            <p class="pull-left">&copy; 2018 M-Dev Store All Rights Reserve</p>
+            <p class="pull-left">&copy; 2022 ATN Company All Rights Reserve</p>
             
         </div><!-- col-md-6 Finish -->
         <div class="col-md-6"><!-- col-md-6 Begin -->
             
-            <p class="pull-right">Theme by: <a href="#">MrGhie</a></p>
+            <p class="pull-right">Theme by: <a href="#">MrKinn</a></p>
             
         </div><!-- col-md-6 Finish -->
     </div><!-- container Finish -->

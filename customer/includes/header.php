@@ -15,9 +15,9 @@ if(isset($_GET['pro_id'])){
     
     $get_product = "select * from products where product_id='$product_id'";
     
-    $run_product = mysqli_query($con,$get_product);
+    $run_product = pg_query($db,$get_product);
     
-    $row_product = mysqli_fetch_array($run_product);
+    $row_product = pg_fetch_array($run_product);
     
     $p_cat_id = $row_product['p_cat_id'];
     
@@ -35,9 +35,9 @@ if(isset($_GET['pro_id'])){
     
     $get_p_cat = "select * from product_categories where p_cat_id='$p_cat_id'";
     
-    $run_p_cat = mysqli_query($con,$get_p_cat);
+    $run_p_cat = pg_query($db,$get_p_cat);
     
-    $row_p_cat = mysqli_fetch_array($run_p_cat);
+    $row_p_cat = pg_fetch_array($run_p_cat);
     
     $p_cat_title = $row_p_cat['p_cat_title'];
     
@@ -50,7 +50,7 @@ if(isset($_GET['pro_id'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>M-Dev Store</title>
+    <title>ATN Store</title>
     <link rel="stylesheet" href="styles/bootstrap-337.min.css">
     <link rel="stylesheet" href="font-awsome/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/style.css">
@@ -133,8 +133,8 @@ if(isset($_GET['pro_id'])){
                
                <a href="../index.php" class="navbar-brand home"><!-- navbar-brand home Begin -->
                    
-                   <img src="images/ecom-store-logo.png" alt="M-dev-Store Logo" class="hidden-xs">
-                   <img src="images/ecom-store-logo-mobile.png" alt="M-dev-Store Logo Mobile" class="visible-xs">
+                   <img src="images/ATN (3).png" alt="ATN-Store Logo" class="hidden-xs">
+                   <img src="images/ATN (3).png" alt="ATN-Store Logo Mobile" class="visible-xs">
                    
                </a><!-- navbar-brand home Finish -->
                
