@@ -26,7 +26,7 @@
                    
                    $get_slides = "select * from slider";
                    
-                   $run_slides = pg_query($con,$get_slides);
+                   $run_slides = pg_query($db,$get_slides);
                    
                    while($row_slides=pg_fetch_array($run_slides)){
                        
@@ -52,7 +52,7 @@
                    
                    $get_slides = "select * from slider";
                    
-                   $run_slides = pg_query($con,$get_slides);
+                   $run_slides = pg_query($db,$get_slides);
                    
                    while($row_slides=pg_fetch_array($run_slides)){
                        
@@ -109,7 +109,7 @@
            <?php 
            
            $get_boxes = "select * from boxes_section";
-           $run_boxes = pg_query($con,$get_boxes);
+           $run_boxes = pg_query($db,$get_boxes);
 
            while($run_boxes_section=pg_fetch_array($run_boxes)){
 

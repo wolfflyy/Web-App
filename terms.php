@@ -28,7 +28,7 @@
                         <?php 
                         
                         $get_terms = "select * from terms LIMIT 0,1";
-                        $run_terms = pg_query($con,$get_terms);
+                        $run_terms = pg_query($db,$get_terms);
 
                         while($row_terms=pg_fetch_array($run_terms)){
 
@@ -52,10 +52,10 @@
                         <?php 
                         
                             $count_terms = "select * from terms";
-                            $run_count_terms = pg_query($con,$count_terms);
+                            $run_count_terms = pg_query($db,$count_terms);
                             $count = pg_num_rows($run_count_terms);
                             $get_terms = "select * from terms LIMIT 1,$count";
-                            $run_terms = pg_query($con,$get_terms);
+                            $run_terms = pg_query($db,$get_terms);
 
                             while($row_terms=pg_fetch_array($run_terms)){
 
@@ -88,7 +88,7 @@
                     <?php 
                     
                         $get_terms = "select * from terms LIMIT 0,1";
-                        $run_terms = pg_query($con,$get_terms);
+                        $run_terms = pg_query($db,$get_terms);
 
                         while($row_terms=pg_fetch_array($run_terms)){
 
@@ -110,10 +110,10 @@
                     <?php 
 
                         $count_terms = "select * from terms";
-                        $run_count_terms = pg_query($con,$count_terms);
+                        $run_count_terms = pg_query($db,$count_terms);
                         $count = pg_num_rows($run_count_terms);
                         $get_terms = "select * from terms LIMIT 1,$count";
-                        $run_terms = pg_query($con,$get_terms);
+                        $run_terms = pg_query($db,$get_terms);
 
                         while($row_terms=pg_fetch_array($run_terms)){
 

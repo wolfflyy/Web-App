@@ -17,7 +17,7 @@ if(isset($_GET['pro_id'])){
     
     $get_product = "select * from products where product_id='$product_id'";
     
-    $run_product = pg_query($con,$get_product);
+    $run_product = pg_query($db,$get_product);
     
     $row_product = pg_fetch_array($run_product);
     
@@ -37,7 +37,7 @@ if(isset($_GET['pro_id'])){
     
     $get_p_cat = "select * from product_categories where p_cat_id='$p_cat_id'";
     
-    $run_p_cat = pg_query($con,$get_p_cat);
+    $run_p_cat = pg_query($db,$get_p_cat);
     
     $row_p_cat = pg_fetch_array($run_p_cat);
     
@@ -423,7 +423,7 @@ if(isset($_GET['pro_id'])){
                    
                     $get_products = "select * from products order by random()";
                    
-                    $run_products = pg_query($con,$get_products);
+                    $run_products = pg_query($db,$get_products);
                    
                    while($row_products=pg_fetch_array($run_products)){
                        

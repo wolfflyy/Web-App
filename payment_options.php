@@ -6,7 +6,7 @@
     
     $select_customer = "select * from customers where customer_email='$session_email'";
     
-    $run_customer = pg_query($con,$select_customer);
+    $run_customer = pg_query($db,$select_customer);
     
     $row_customer = pg_fetch_array($run_customer);
     

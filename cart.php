@@ -34,7 +34,7 @@
                        
                        $select_cart = "select * from cart where ip_add='$ip_add'";
                        
-                       $run_cart = pg_query($con,$select_cart);
+                       $run_cart = pg_query($db,$select_cart);
                        
                        $count = pg_num_rows($run_cart);
                        
@@ -77,7 +77,7 @@
                                        
                                        $get_products = "select * from products where product_id='$pro_id'";
                                        
-                                       $run_products = pg_query($con,$get_products);
+                                       $run_products = pg_query($db,$get_products);
                                        
                                        while($row_products = pg_fetch_array($run_products)){
                                            
@@ -196,7 +196,7 @@
                
                 function update_cart(){
                     
-                    global $con;
+                    global $db;
                     
                     if(isset($_POST['update'])){
                         
@@ -204,7 +204,7 @@
                             
                             $delete_product = "delete from cart where p_id='$remove_id'";
                             
-                            $run_delete = pg_query($con,$delete_product);
+                            $run_delete = pg_query($db,$delete_product);
                             
                             if($run_delete){
                                 
@@ -233,7 +233,7 @@
                    
                    $get_products = "select * from products order by random()";
                    
-                   $run_products = pg_query($con,$get_products);
+                   $run_products = pg_query($db,$get_products);
                    
                    while($row_products=pg_fetch_array($run_products)){
                        

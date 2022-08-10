@@ -20,7 +20,7 @@ $invoice_no = mt_rand();
 
 $select_cart = "select * from cart where ip_add='$ip_add'";
 
-$run_cart = pg_query($con,$select_cart);
+$run_cart = pg_query($db,$select_cart);
 
 while($row_cart = pg_fetch_array($run_cart)){
     
@@ -32,7 +32,7 @@ while($row_cart = pg_fetch_array($run_cart)){
     
     $get_products = "select * from products where product_id='$pro_id'";
     
-    $run_products = pg_query($con,$get_products);
+    $run_products = pg_query($db,$get_products);
     
     while($row_products = pg_fetch_array($run_products)){
         
@@ -40,15 +40,15 @@ while($row_cart = pg_fetch_array($run_cart)){
         
         $insert_customer_order = "insert into customer_orders (customer_id,due_amount,invoice_no,qty,size,order_date,order_status) values ('$customer_id','$sub_total','$invoice_no','$pro_qty','$pro_size',NOW(),'$status')";
         
-        $run_customer_order = pg_query($con,$insert_customer_order);
+        $run_customer_order = pg_query($db,$insert_customer_order);
         
         $insert_pending_order = "insert into pending_orders (customer_id,invoice_no,product_id,qty,size,order_status) values ('$customer_id','$invoice_no','$pro_id','$pro_qty','$pro_size','$status')";
         
-        $run_pending_order = pg_query($con,$insert_pending_order);
+        $run_pending_order = pg_query($db,$insert_pending_order);
         
         $delete_cart = "delete from cart where ip_add='$ip_add'";
         
-        $run_delete = pg_query($con,$delete_cart);
+        $run_delete = pg_query($db,$delete_cart);
         
         echo "<script>alert('Your orders has been submitted, Thanks')</script>";
         
