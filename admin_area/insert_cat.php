@@ -121,7 +121,7 @@
               
               $insert_cat = "insert into categories (cat_title,cat_top,cat_image) values ('$cat_title','$cat_top','$cat_image')";
               
-              $run_cat = pg_query($db,$insert_cat);
+              $run_cat = pg_query($con,$insert_cat);
               
               if($run_cat){
                   

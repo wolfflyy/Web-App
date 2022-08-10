@@ -16,7 +16,7 @@
         
         $edit_box_query = "select * from boxes_section where box_id='$edit_box_id'";
         
-        $run_edit_box = pg_query($db,$edit_box_query);
+        $run_edit_box = pg_query($con,$edit_box_query);
         
         $row_edit_box = pg_fetch_array($run_edit_box);
         
@@ -117,7 +117,7 @@
               
               $update_box = "update boxes_section set box_title='$box_title',box_desc='$box_desc' where box_id='$box_id'";
               
-              $run_box = pg_query($db,$update_box);
+              $run_box = pg_query($con,$update_box);
               
               if($run_box){
                   

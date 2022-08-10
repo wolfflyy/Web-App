@@ -58,7 +58,7 @@
                             
                                 $get_orders = "select * from pending_orders";
                                 
-                                $run_orders = pg_query($db,$get_orders);
+                                $run_orders = pg_query($con,$get_orders);
           
                                 while($row_order=pg_fetch_array($run_orders)){
                                     
@@ -78,7 +78,7 @@
                                     
                                     $get_products = "select * from products where product_id='$product_id'";
                                     
-                                    $run_products = pg_query($db,$get_products);
+                                    $run_products = pg_query($con,$get_products);
                                     
                                     $row_products = pg_fetch_array($run_products);
                                     
@@ -86,7 +86,7 @@
                                     
                                     $get_customer = "select * from customers where customer_id='$c_id'";
                                     
-                                    $run_customer = pg_query($db,$get_customer);
+                                    $run_customer = pg_query($con,$get_customer);
                                     
                                     $row_customer = pg_fetch_array($run_customer);
                                     
@@ -94,7 +94,7 @@
                                     
                                     $get_c_order = "select * from customer_orders where order_id='$order_id'";
                                     
-                                    $run_c_order = pg_query($db,$get_c_order);
+                                    $run_c_order = pg_query($con,$get_c_order);
                                     
                                     $row_c_order = pg_fetch_array($run_c_order);
                                     

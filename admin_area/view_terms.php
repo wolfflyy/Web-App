@@ -37,7 +37,7 @@
                 
                     $get_terms = "select * from terms";
         
-                    $run_terms = pg_query($db,$get_terms);
+                    $run_terms = pg_query($con,$get_terms);
         
                     while($run_terms_section=pg_fetch_array($run_terms)){
                         

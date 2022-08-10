@@ -57,7 +57,7 @@
                             
                                 $get_pro = "select * from products";
                                 
-                                $run_pro = pg_query($db,$get_pro);
+                                $run_pro = pg_query($con,$get_pro);
           
                                 while($row_pro=pg_fetch_array($run_pro)){
                                     
@@ -86,7 +86,7 @@
                                     
                                         $get_sold = "select * from pending_orders where product_id='$pro_id'";
                                     
-                                        $run_sold = pg_query($db,$get_sold);
+                                        $run_sold = pg_query($con,$get_sold);
                                     
                                         $count = pg_num_rows($run_sold);
                                     

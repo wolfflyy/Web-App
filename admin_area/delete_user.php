@@ -16,7 +16,7 @@
         
         $delete_user = "delete from admins where admin_id='$delete_user_id'";
         
-        $run_delete = pg_query($db,$delete_user);
+        $run_delete = pg_query($con,$delete_user);
         
         if($run_delete){
             

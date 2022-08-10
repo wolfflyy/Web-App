@@ -16,7 +16,7 @@
         
         $get_p = "select * from products where product_id='$edit_id'";
         
-        $run_edit = pg_query($db,$get_p);
+        $run_edit = pg_query($con,$get_p);
         
         $row_edit = pg_fetch_array($run_edit);
         
@@ -46,7 +46,7 @@
         
         $get_manufacturer = "select * from manufacturers where manufacturer_id='$m_id'";
         
-        $run_manufacturer = pg_query($db,$get_manufacturer);
+        $run_manufacturer = pg_query($con,$get_manufacturer);
         
         $row_manufacturer = pg_fetch_array($run_manufacturer);
         
@@ -56,7 +56,7 @@
         
         $get_p_cat = "select * from product_categories where p_cat_id='$p_cat'";
         
-        $run_p_cat = pg_query($db,$get_p_cat);
+        $run_p_cat = pg_query($con,$get_p_cat);
         
         $row_p_cat = pg_fetch_array($run_p_cat);
         
@@ -64,7 +64,7 @@
         
         $get_cat = "select * from categories where cat_id='$cat'";
         
-        $run_cat = pg_query($db,$get_cat);
+        $run_cat = pg_query($con,$get_cat);
         
         $row_cat = pg_fetch_array($run_cat);
         
@@ -146,7 +146,7 @@
                               <?php 
                               
                               $get_manufacturer = "select * from manufacturers";
-                              $run_manufacturer = pg_query($db,$get_manufacturer);
+                              $run_manufacturer = pg_query($con,$get_manufacturer);
                               
                               while ($row_manufacturer=pg_fetch_array($run_manufacturer)){
                                   
@@ -184,7 +184,7 @@
                               <?php 
                               
                               $get_p_cats = "select * from product_categories";
-                              $run_p_cats = pg_query($db,$get_p_cats);
+                              $run_p_cats = pg_query($con,$get_p_cats);
                               
                               while ($row_p_cats=pg_fetch_array($run_p_cats)){
                                   
@@ -222,7 +222,7 @@
                               <?php 
                               
                               $get_cat = "select * from categories";
-                              $run_cat = pg_query($db,$get_cat);
+                              $run_cat = pg_query($con,$get_cat);
                               
                               while ($row_cat=pg_fetch_array($run_cat)){
                                   
@@ -391,7 +391,7 @@ if(isset($_POST['update'])){
         
         $update_product = "update products set p_cat_id='$product_cat',cat_id='$cat',manufacturer_id='$manufacturer_id',date=NOW(),product_title='$product_title',product_img1='$product_img1',product_img2='$product_img2',product_img3='$product_img3',product_keywords='$product_keywords',product_desc='$product_desc',product_price='$product_price' where product_id='$p_id'";
         
-        $run_product = pg_query($db,$update_product);
+        $run_product = pg_query($con,$update_product);
         
         if($run_product){
             
@@ -407,7 +407,7 @@ if(isset($_POST['update'])){
         
         $update_product = "update products set p_cat_id='$product_cat',cat_id='$cat',manufacturer_id='$manufacturer_id',date=NOW(),product_title='$product_title',product_keywords='$product_keywords',product_desc='$product_desc',product_price='$product_price' where product_id='$p_id'";
         
-        $run_product = pg_query($db,$update_product);
+        $run_product = pg_query($con,$update_product);
         
         if($run_product){
             

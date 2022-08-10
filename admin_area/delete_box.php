@@ -16,7 +16,7 @@
         
         $delete_box = "delete from boxes_section where box_id='$delete_box_id'";
         
-        $run_delete_box = pg_query($db,$delete_box);
+        $run_delete_box = pg_query($con,$delete_box);
         
         if($run_delete_box){
             

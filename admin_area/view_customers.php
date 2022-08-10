@@ -57,7 +57,7 @@
                             
                                 $get_c = "select * from customers";
                                 
-                                $run_c = pg_query($db,$get_c);
+                                $run_c = pg_query($con,$get_c);
           
                                 while($row_c=pg_fetch_array($run_c)){
                                     

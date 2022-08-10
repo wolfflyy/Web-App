@@ -53,7 +53,7 @@
           
                                 $get_cats = "select * from categories";
           
-                                $run_cats = pg_query($db,$get_cats);
+                                $run_cats = pg_query($con,$get_cats);
           
                                 while($row_cats=pg_fetch_array($run_cats)){
                                     
