@@ -67,7 +67,7 @@ if(isset($_POST['login'])){
     
     $select_customer = "select * from customers where customer_email='$customer_email' AND customer_pass='$customer_pass'";
     
-    $run_customer = pg_query($conn,$select_customer);
+    $run_customer = pg_query($db,$select_customer);
     
     $get_ip = getRealIpUser();
     
@@ -75,7 +75,7 @@ if(isset($_POST['login'])){
     
     $select_cart = "select * from cart where ip_add='$get_ip'";
     
-    $run_cart = pg_query($conn,$select_cart);
+    $run_cart = pg_query($db,$select_cart);
     
     $check_cart = pg_num_rows($run_cart);
     

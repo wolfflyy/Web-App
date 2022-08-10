@@ -54,7 +54,7 @@ if(isset($_POST['submit'])){
     
     $sel_c_old_pass = "select * from customers where customer_pass='$c_old_pass'";
     
-    $run_c_old_pass = pg_query($conn,$sel_c_old_pass);
+    $run_c_old_pass = pg_query($db,$sel_c_old_pass);
     
     $check_c_old_pass = pg_fetch_array($run_c_old_pass);
     
@@ -76,7 +76,7 @@ if(isset($_POST['submit'])){
     
     $update_c_pass = "update customers set customer_pass='$c_new_pass' where customer_email='$c_email'";
     
-    $run_c_pass = pg_query($conn,$update_c_pass);
+    $run_c_pass = pg_query($db,$update_c_pass);
     
     if($run_c_pass){
         

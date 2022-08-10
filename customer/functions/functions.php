@@ -1,6 +1,6 @@
 <?php 
 
-$conn = pg_connect("host=ec2-3-223-169-166.compute-1.amazonaws.com dbname=d94h92r35f62ln user=uxeervncpjcmmz password=d39e779b329374643f49f481395c02c2c32b64ef138a4c83e90f2f9fb922bc9b port=5432");
+$db = pg_connect("host=ec2-3-223-169-166.compute-1.amazonaws.com dbname=d94h92r35f62ln user=uxeervncpjcmmz password=d39e779b329374643f49f481395c02c2c32b64ef138a4c83e90f2f9fb922bc9b port=5432");
 
 /// begin getRealIpUser functions ///
 
@@ -24,7 +24,7 @@ function getRealIpUser(){
 
 function add_cart(){
     
-    global $conn;
+    global $db;
     
     if(isset($_GET['add_cart'])){
         
@@ -38,7 +38,7 @@ function add_cart(){
         
         $check_product = "select * from cart where ip_add='$ip_add' AND p_id='$p_id'";
         
-        $run_check = pg_query($conn,$check_product);
+        $run_check = pg_query($db,$check_product);
         
         if(pg_num_rows($run_check)>0){
             
@@ -49,7 +49,7 @@ function add_cart(){
             
             $query = "insert into cart (p_id,ip_add,qty,size) values ('$p_id','$ip_add','$product_qty','$product_size')";
             
-            $run_query = pg_query($conn,$query);
+            $run_query = pg_query($db,$query);
             
             echo "<script>window.open('details.php?pro_id=$p_id','_self')</script>";
             
@@ -65,11 +65,11 @@ function add_cart(){
 
 function getPro(){
     
-    global $conn;
+    global $db;
     
     $get_products = "select * from products order by 1 DESC";
     
-    $run_products = pg_query($conn,$get_products);
+    $run_products = pg_query($db,$get_products);
     
     while($row_products=pg_fetch_array($run_products)){
         
@@ -145,11 +145,11 @@ function getPro(){
 
 function getPCats(){
     
-    global $conn;
+    global $db;
     
     $get_p_cats = "select * from product_categories";
     
-    $run_p_cats = pg_query($conn,$get_p_cats);
+    $run_p_cats = pg_query($db,$get_p_cats);
     
     while($row_p_cats=pg_fetch_array($run_p_cats)){
         
@@ -177,11 +177,11 @@ function getPCats(){
 
 function getCats(){
     
-    global $conn;
+    global $db;
     
     $get_cats = "select * from categories";
     
-    $run_cats = pg_query($conn,$get_cats);
+    $run_cats = pg_query($db,$get_cats);
     
     while($row_cats=pg_fetch_array($run_cats)){
         
@@ -209,7 +209,7 @@ function getCats(){
 
 function getpcatpro(){
     
-    global $conn;
+    global $db;
     
     if(isset($_GET['p_cat'])){
         
@@ -217,7 +217,7 @@ function getpcatpro(){
         
         $get_p_cat ="select * from product_categories where p_cat_id='$p_cat_id'";
         
-        $run_p_cat = pg_query($conn,$get_p_cat);
+        $run_p_cat = pg_query($db,$get_p_cat);
         
         $row_p_cat = pg_fetch_array($run_p_cat);
         
@@ -227,7 +227,7 @@ function getpcatpro(){
         
         $get_products ="select * from products where p_cat_id='$p_cat_id'";
         
-        $run_products = pg_query($conn,$get_products);
+        $run_products = pg_query($db,$get_products);
         
         $count = pg_num_rows($run_products);
         
@@ -335,7 +335,7 @@ function getpcatpro(){
 
 function getcatpro(){
     
-    global $conn;
+    global $db;
     
     if(isset($_GET['cat'])){
         
@@ -343,7 +343,7 @@ function getcatpro(){
         
         $get_cat = "select * from categories where cat_id='$cat_id'";
         
-        $run_cat = pg_query($conn,$get_cat);
+        $run_cat = pg_query($db,$get_cat);
         
         $row_cat = pg_fetch_array($run_cat);
         
@@ -353,7 +353,7 @@ function getcatpro(){
         
         $get_cat = "select * from products where cat_id='$cat_id'";
         
-        $run_products = pg_query($conn,$get_cat);
+        $run_products = pg_query($db,$get_cat);
         
         $count = pg_num_rows($run_products);
         
@@ -460,13 +460,13 @@ function getcatpro(){
 
 function items(){
     
-    global $conn;
+    global $db;
     
     $ip_add = getRealIpUser();
     
     $get_items = "select * from cart where ip_add='$ip_add'";
     
-    $run_items = pg_query($conn,$get_items);
+    $run_items = pg_query($db,$get_items);
     
     $count_items = pg_num_rows($run_items);
     
@@ -480,7 +480,7 @@ function items(){
 
 function total_price(){
     
-    global $conn;
+    global $db;
     
     $ip_add = getRealIpUser();
     
@@ -488,7 +488,7 @@ function total_price(){
     
     $select_cart = "select * from cart where ip_add='$ip_add'";
     
-    $run_cart = pg_query($conn,$select_cart);
+    $run_cart = pg_query($db,$select_cart);
     
     while($record=pg_fetch_array($run_cart)){
         
@@ -498,7 +498,7 @@ function total_price(){
         
         $get_price = "select * from products where product_id='$pro_id'";
         
-        $run_price = pg_query($conn,$get_price);
+        $run_price = pg_query($db,$get_price);
         
         while($row_price=pg_fetch_array($run_price)){
             
