@@ -80,7 +80,7 @@
                               <?php 
                               
                               $get_manufacturer = "select * from manufacturers";
-                              $run_manufacturer = pg_query($con,$get_manufacturer);
+                              $run_manufacturer = pg_query($db,$get_manufacturer);
                               
                               while ($row_manufacturer=pg_fetch_array($run_manufacturer)){
                                   
@@ -116,7 +116,7 @@
                               <?php 
                               
                               $get_p_cats = "select * from product_categories";
-                              $run_p_cats = pg_query($con,$get_p_cats);
+                              $run_p_cats = pg_query($db,$get_p_cats);
                               
                               while ($row_p_cats=pg_fetch_array($run_p_cats)){
                                   
@@ -152,7 +152,7 @@
                               <?php 
                               
                               $get_cat = "select * from categories";
-                              $run_cat = pg_query($con,$get_cat);
+                              $run_cat = pg_query($db,$get_cat);
                               
                               while ($row_cat=pg_fetch_array($run_cat)){
                                   
@@ -301,7 +301,7 @@ if(isset($_POST['submit'])){
     
     $insert_product = "insert into products (p_cat_id,cat_id,manufacturer_id,date,product_title,product_img1,product_img2,product_img3,product_price,product_keywords,product_desc) values ('$product_cat','$cat','$manufacturer_id',NOW(),'$product_title','$product_img1','$product_img2','$product_img3','$product_price','$product_keywords','$product_desc')";
     
-    $run_product = pg_query($con,$insert_product);
+    $run_product = pg_query($db,$insert_product);
     
     if($run_product){
         

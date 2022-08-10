@@ -110,7 +110,7 @@
         
         $view_slides = "select * from slider";
         
-        $view_run_slide = pg_query($con,$view_slides);
+        $view_run_slide = pg_query($db,$view_slides);
         
         $count = pg_num_rows($view_run_slide);
         
@@ -120,7 +120,7 @@
             
             $insert_slide = "insert into slider (slide_name,slide_url,slide_image) values ('$slide_name','$slide_url','$slide_image')";
             
-            $run_slide = pg_query($con,$insert_slide);
+            $run_slide = pg_query($db,$insert_slide);
             
             echo "<script>alert('Your new slide image has been inserted')</script>";
             

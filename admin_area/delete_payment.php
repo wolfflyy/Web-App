@@ -16,7 +16,7 @@
         
         $delete_payment = "delete from payments where payment_id='$delete_payment_id'";
         
-        $run_delete = pg_query($con,$delete_payment);
+        $run_delete = pg_query($db,$delete_payment);
         
         if($run_delete){
             
