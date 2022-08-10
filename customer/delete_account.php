@@ -21,7 +21,7 @@ if(isset($_POST['Yes'])){
     
     $delete_customer = "delete from customers where customer_email='$c_email'";
     
-    $run_delete_customer = pg_query($conn,$delete_customer);
+    $run_delete_customer = pg_query($db,$delete_customer);
     
     if($run_delete_customer){
         

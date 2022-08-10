@@ -126,7 +126,7 @@ if(isset($_POST['update'])){
     
     $update_customer = "update customers set customer_name='$c_name',customer_email='$c_email',customer_country='$c_country',customer_city='$c_city',customer_address='$c_address',customer_contact='$c_contact',customer_image='$c_image' where customer_id='$update_id' ";
     
-    $run_customer = pg_query($conn,$update_customer);
+    $run_customer = pg_query($db,$update_customer);
     
     if($run_customer){
         
